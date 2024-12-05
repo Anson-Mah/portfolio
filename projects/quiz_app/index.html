@@ -1,0 +1,137 @@
+<!--Name: Anson Mah-->
+<!--Date: 21 April, 2024-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Various Quizzes - Homepage</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+	/* Makes the page contents vertically centered. */
+	body {
+		display: grid;
+		align-items: center;
+		min-height: 90vh;
+		overflow: hidden;
+	}
+
+	/* Displays the quizzes in a 2x2 grid. */
+	#all_quizzes {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 1.1em;
+		justify-content: center;
+	}
+
+	.quiz_choice {
+		width: 15em;
+		height: 12em;
+		background-color: var(--quiz_choice-color);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+		font-size: 2vh;
+	}
+
+	.quiz_choice p {
+		margin: 0;
+	}
+
+	#title {
+		text-align: center;
+		font-size: 4.25vh;
+	}
+
+	img {
+		border: none;
+		width: 10em;
+	}
+
+	#chess_img {
+		width: 8.5em;
+	}
+	
+</style>
+
+<body>
+
+  <div id="main">
+
+    <h1 id="title">Quizzes</h1>
+
+    <!--A menu that lets the user select what quiz they want to take.-->
+		<div id="all_quizzes">
+			<a href="china.html" class="quiz_choice"><img src="https://flagcdn.com/cn.svg"><p><b>Chinese Capitals Quiz</b></p></a>
+			<a href="will_wood.html" class="quiz_choice"><img src="Media/an_image_of_Will_Wood.png"><p><b>Will Wood Song Quiz</b></p></a>
+			<a href="chess.html" class="quiz_choice"><img id="chess_img" src="https://chessily.com/wp-content/uploads/2022/04/chess-board-setup-the-chess-starting-position.png"><p><b>Various Chess Puzzles</b></p></a>
+			<a href="latam.html" class="quiz_choice"><img id="latam_flag" src=""><p><b>Latin American Flags Quiz</b></p></a>
+		</div>
+
+  </div>
+
+	<script>
+
+		// Chooses a random color scheme for the page. 
+		let colors = ['red', 'blue', 'green'];
+		let page_color = Math.floor(Math.random()*colors.length);
+		switch (colors[page_color]) {
+			case 'red': 
+				document.documentElement.style.setProperty('--background-color', 'hsl(350, 100%, 88%)');
+				document.documentElement.style.setProperty('--color', 'hsl(335, 100%, 60%)');
+				document.documentElement.style.setProperty('--quiz_choice-color', 'hsl(347, 100%, 95%)');
+				document.documentElement.style.setProperty('--quiz_choice-hover', 'hsl(60, 100%, 89%)');
+			break;
+			case 'blue': 
+				document.documentElement.style.setProperty('--background-color', 'hsl(222, 100%, 90%)');
+				document.documentElement.style.setProperty('--color', 'hsl(208, 78%, 53%)');
+				document.documentElement.style.setProperty('--quiz_choice-color', 'hsl(217, 100%, 96%)');
+				document.documentElement.style.setProperty('--quiz_choice-hover', 'hsl(21, 70%, 85%)');
+			break;
+			case 'green': 
+				document.documentElement.style.setProperty('--background-color', 'hsl(110, 100%, 90%)');
+				document.documentElement.style.setProperty('--color', 'hsl(118, 62%, 33%)');
+				document.documentElement.style.setProperty('--quiz_choice-color', 'hsl(140, 70%, 97%)');
+				document.documentElement.style.setProperty('--quiz_choice-hover', 'hsl(155, 82%, 75%)');
+			break;
+		}
+
+		// Chooses a random Latin American flag to display on the Homepage.
+		const latam_flags = [
+			"https://flagcdn.com/ar.svg",
+			"https://flagcdn.com/br.svg",
+			"https://flagcdn.com/bo.svg",
+			"https://flagcdn.com/cu.svg",
+			"https://flagcdn.com/cl.svg",
+			"https://flagcdn.com/co.svg",
+			"https://flagcdn.com/cr.svg",
+			"https://flagcdn.com/do.svg",
+			"https://flagcdn.com/ec.svg",
+			"https://flagcdn.com/gt.svg",
+			"https://flagcdn.com/hn.svg",
+			"https://flagcdn.com/mx.svg",
+			"https://flagcdn.com/ni.svg",
+			"https://flagcdn.com/pa.svg",
+			"https://flagcdn.com/pe.svg",
+			"https://flagcdn.com/pr.svg",
+			"https://flagcdn.com/py.svg",
+			"https://flagcdn.com/sv.svg",
+			"https://flagcdn.com/uy.svg",
+			"https://flagcdn.com/ve.svg",
+		]
+
+		let flagToBeDisplayed = Math.floor(Math.random()*latam_flags.length);
+		document.getElementById("latam_flag").src = latam_flags[flagToBeDisplayed];
+
+	</script>
+
+</body>
+
+</html>

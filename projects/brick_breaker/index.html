@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Brick Breaker</title>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+<style>
+	body {
+		background-color: black;
+		display: flex;
+		justify-content: center;
+		margin-top: 1em;
+	}
+	canvas {
+		border: 10px solid white;
+	}
+	svg {
+		padding: 0.3em;
+		cursor: pointer;
+		background-color: lightgrey;
+		height: 2em;
+		margin: 10px 10px 0 10px;
+	}
+</style>
+<body>
+	<canvas id="canvas"></canvas>
+	<svg viewBox="0 0 32 32" id="toggleTheme">
+    <path d="M27.5 11.5v-7h-7L16 0l-4.5 4.5h-7v7L0 16l4.5 4.5v7h7L16 32l4.5-4.5h7v-7L32 16l-4.5-4.5zM16 25.4V6.6c5.2 0 9.4 4.2 9.4 9.4s-4.2 9.4-9.4 9.4z" />
+  </svg>
+	<script>
+		// Declares canvas-related variables.
+		const canvas = document.getElementById('canvas');
+		const ctx = document.getElementById('canvas').getContext('2d');
+
+		// Determines the size of the canvas
+		canvas.width = '600';
+		canvas.height = '600';
+
+		// Sets size of the ball
+		let ballSize = 10;
+
+		// Makes variables for ball co-ordinates; Places the ball at the center
+		let ballX = canvas.width/2 - ballSize/2;
+		let ballY = canvas.height/2 - ballSize/2;
+		
+		// Sets the speed of the ball
+		let speedX = Math.random()+1;
+		let speedY = Math.random()+2;
+
+    // Sets paddle size
+    let paddleShort = 6;
+    let paddleLong = 60;
+
+		// Makes a variable for the paddle position; Places the paddle at the center
+		let paddleX = canvas.width/2 - paddleLong/2; 
+
+    // Determines how far away from the edge the paddle is
+    let paddleOffset = 20;
+
+		// Sets the speed of the paddle
+		let paddleSpeed = 0;
+
+		// Declares player score
+		let score = 0;
+
+		// Declares # of lives the player has
+		let lives = 3;
+
+    // Boolean that determines whether the game is over or not
+    let gameOver = false;
+
+		// Boolean that determines whether the user won or lost
+		let win = false;
+
+		// Boolean that checks if the player has clicked on the screen or not
+		screen_clicked = false;
+
+		// Makes an array for the bricks
+		let bricks = [];
+
+		// Sets size of the bricks
+		let brickHeight = 15;
+		let brickWidth = 43;
+
+		// # of rows of bricks 
+		let rows = 7;
+
+		// # of columns of bricks
+		let columns = 12;
+
+		// Gives some space between each brick
+		let gap = 5;
+
+		// Theme-Related Variables
+		let backgroundColor = 'black';
+		let elementColor = 'white';
+		let isLightMode = false;
+
+		function redrawEverything() {
+      // Erases Everything
+      ctx.fillStyle = backgroundColor
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Draws Ball
+      ctx.fillStyle = elementColor;
+      ctx.fillRect(ballX, ballY, ballSize, ballSize);
+
+      // Draws Paddle
+      ctx.fillStyle= elementColor;
+      ctx.fillRect(paddleX, canvas.width - paddleOffset, paddleLong, paddleShort)
+
+      // Displays Score
+      ctx.fillStyle = elementColor;
+      ctx.font = "17px Helvetica";
+      ctx.fillText(`Score: ${score}`, 15, 30);
+
+			// Displays # of Lives
+      ctx.fillStyle = elementColor;
+      ctx.font = "17px Helvetica";
+      ctx.fillText(`Lives: ${lives}`, 120, 30);
+
+			// Displays "Click to Start" if game has not been started.
+			if (!screen_clicked) {
+				ctx.fillStyle = elementColor;
+				ctx.font = "55px Helvetica";
+      	ctx.fillText("Click to Start", canvas.width/4.2, canvas.height/1.25);
+			}
+
+			// Draws Bricks
+			bricks.forEach(brick => {
+				ctx.fillStyle = brick.color;
+				ctx.fillRect(brick.x, brick.y, brickWidth, brickHeight);
+			});
+    }
+
+    function updatePositions() {
+    	// Changes the ball position according to the speed of the ball.
+      ballX += speedX;
+      ballY += speedY;
+
+			// Changes the paddle position if the user is using the keyboard to control it.
+			paddleX += paddleSpeed;
+    }
+
+		function createBricks() {
+			for (let r=0; r < rows; r++) {
+				// Determines the brick color and score value based on the row the brick is in
+				switch (r) {
+					case 0:
+						color = 'red';
+						value = 7;
+					break;
+
+					case 1:
+						color = 'orange';
+						value = 6;
+					break;
+
+					case 2:
+						color = 'yellow'
+						value = 5;
+					break;
+
+					case 3:
+						color = 'green'
+						value = 4;
+					break;
+
+					case 4:
+						color = 'turquoise'
+						value = 3;
+					break;
+
+					case 5:
+						color = 'indigo'
+						value = 2;
+					break;
+
+					case 6:
+						color = 'purple' 
+						value = 1;
+					break;
+				}
+				// Builds the array of bricks
+				for (let c=0; c < columns; c++) {
+					let brick = {
+						x : c*(gap + brickWidth) + gap + 8,
+            y : r*(gap+brickHeight) + gap + 40,
+            width : brickWidth,
+            height : brickHeight,
+            break : false,
+						value: value,
+						color: color,
+					}
+					bricks.push(brick);
+				}
+			}
+		}
+
+    // Adds collision to the game
+    function checkForCollision() {
+      // Makes the ball 2D
+      let ball2D = {
+        top: ballY,
+        bottom: ballY + ballSize,
+        left: ballX,
+        right: ballX + ballSize,
+				center: ballX + (ballSize/2)
+      }
+
+      // Makes the paddle 2D
+      let paddle2D = {
+        top: canvas.height - paddleOffset - paddleShort,
+        bottom: canvas.height - paddleOffset,
+        left: paddleX,
+        right: paddleX + paddleLong,
+				center: paddleX + (paddleLong/2)
+      }
+
+      // Ball Collision with Top Edge
+      if (ball2D.top < 0) {
+				speedY = -speedY;
+			}
+
+			// Ball Collision with Left & Right Edge
+      if (ball2D.left < 0 || ball2D.right > canvas.width) {
+				speedX = -speedX;
+			}
+
+      // Ball Collision with Bottom Edge
+      if (ball2D.bottom > canvas.height) {
+				lives--; // Subtracts one life
+
+				// Repositions ball to the center
+				ballX = canvas.width/2 - ballSize/2;
+				ballY = canvas.height/2 - ballSize/2;
+
+				// Game ends if no lives left
+				if (lives<=0) {
+					gameOver = true;
+				}
+
+				// Ball goes in the general direction of the paddle
+				if (canvas.width/2 < paddle2D.center) {
+					speedX = Math.abs(speedX);
+				} else if (canvas.width/2 > paddle2D.center) {
+					speedX = -Math.abs(speedX);
+				}
+			}
+
+			// Ball Collision with Paddle
+			if (
+				ball2D.left < paddle2D.right &&
+				ball2D.right > paddle2D.left && 
+				ball2D.top < paddle2D.bottom && 
+				ball2D.bottom > paddle2D.top 
+			) {
+				speedY = -speedY; // Ricochets the ball
+				ballY--; // Prevents Additionall Collisions
+
+				// Direction of ball depends on where on the paddle it contacted
+				if (ball2D.center > paddle2D.center + paddleLong/4) {
+					speedX = Math.abs(speedX);
+				} else if (ball2D.center < paddle2D.center - paddleLong/4) {
+					speedX = -Math.abs(speedX);
+				}
+			}
+
+			// Paddle Collision with Screen Edge
+			if (paddleX + paddleLong > canvas.width) {
+				paddleX = canvas.width - paddleLong;
+			} else if (paddleX < 0) {
+				paddleX = 0;
+			}
+
+			// Ball Collision with Brick
+			for (i=0; i < bricks.length; i++) {
+				let brick2D = {
+					top: bricks[i].y,
+					bottom: bricks[i].y + bricks[i].height,
+					left: bricks[i].x,
+					right: bricks[i].x + bricks[i].width,
+				}
+
+				if (
+					ball2D.left < brick2D.right &&
+					ball2D.right > brick2D.left && 
+					ball2D.top < brick2D.bottom && 
+					ball2D.bottom > brick2D.top 
+				) {
+					speedY = -speedY;
+					score += bricks[i].value
+					bricks.splice(i, 1);
+					if (bricks.length == 0) {
+						gameOver = true;
+						win = true;
+					}
+				}
+			}
+    }
+
+    // Enables user to move the paddle with their mouse.
+    canvas.addEventListener('mousemove', (e)=> {
+      paddleX = e.offsetX;
+
+			// Makes the cursor reappear again if it is hidden.
+			document.body.style.cursor = "auto";
+    })
+
+		// Adds touch support
+		canvas.addEventListener('touchmove', (e)=> {
+			paddleX = e.touches[0].pageX - e.touches[0].target.offsetLeft;    
+    })
+
+    document.addEventListener('keydown', (e)=> {
+			// Allows user to use the keyboard to move the paddle.
+      switch (e.key) {
+        case "ArrowLeft":
+        case "A":
+        case "a":
+					paddleSpeed = -3;
+        break;
+
+        case "ArrowRight":
+        case "D":
+        case "d":
+					paddleSpeed = 3;
+        break;
+
+				// Allows user to press Enter to start the game.
+				case "Enter":
+				case " ": // Spacebar
+					if (screen_clicked) {
+						return;
+					} else {
+						screen_clicked = true;
+						updateGameState();
+					}
+				break;
+      }
+
+			// Hides the cursor
+			document.body.style.cursor = "none";
+    })
+
+		// Makes paddle stop moving if key is released. 
+		document.addEventListener('keyup', (e)=> {
+      switch (e.key) {
+        case "ArrowLeft":
+        case "A":
+        case "a":
+					paddleSpeed = 0;
+        break;
+
+        case "ArrowRight":
+        case "D":
+        case "d":
+					paddleSpeed = 0;
+        break;
+      }
+    })
+
+    // Updates the game 
+    function updateGameState() {
+      redrawEverything();
+			if (gameOver) {
+				gameOverFunction();
+				return;
+			}
+      updatePositions();
+      checkForCollision();
+			setTimeout(updateGameState, 7);
+    }
+
+    // Starts the game on click or touch.
+		canvas.addEventListener('mousedown', start_game);
+		canvas.addEventListener('touchstart', start_game);
+
+		function start_game() {
+			if (screen_clicked) {
+				return;
+			} else {
+				screen_clicked = true;
+				updateGameState();
+			}
+		}
+
+		// Function is called if the player loses.
+		function gameOverFunction() {
+			ctx.fillStyle = elementColor;
+			ctx.font = "55px Helvetica";
+			if (win) {
+				// Displays "You Win!"
+				ctx.fillText("You Win!", canvas.width/3.1, canvas.height/1.25);
+			} else {
+				// Displays "Game Over"
+				ctx.fillText("Game Over", canvas.width/3.8, canvas.height/1.25);
+			}
+
+			// Displays "Click to Restart"
+			ctx.font = "19px Helvetica";
+      ctx.fillText("Click to Restart", canvas.width/2.51, canvas.height/1.16);
+
+			// Resets variables.
+			screen_clicked = false;
+			gameOver = false;
+			ballX = canvas.width/2 - ballSize/2;
+			ballY = canvas.height/2 - ballSize/2;
+			paddleX = canvas.width/2 - paddleLong/2; 
+			speedX = 1;
+			speedY = 3;
+			score = 0;
+			lives = 3;
+
+			// Erases bricks and rebuilds them.
+			bricks = [];
+			createBricks();
+		}
+		
+		// Displays the Game
+		createBricks();
+		redrawEverything();
+
+		// Theme 
+		document.getElementById('toggleTheme').addEventListener('click', ()=>{
+			if (isLightMode == true) {
+				backgroundColor = 'black';
+				elementColor = 'white';
+				document.body.style.backgroundColor = 'black';
+				canvas.style.border = '10px solid white';
+			} else {
+				backgroundColor = 'white';
+				elementColor = 'black';
+				document.body.style.backgroundColor = 'white';
+				canvas.style.border = '10px solid black';
+			}
+			isLightMode = !isLightMode;
+			paddleX = canvas.width/2 - paddleLong/2; 
+			redrawEverything();
+		})
+	</script>
+</body>
+</html>

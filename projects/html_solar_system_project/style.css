@@ -1,0 +1,169 @@
+/* Date: 17-20 January, 2024 */
+/* Name: Anson Mah */
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#sun {
+    width: 100px;
+    height: 100px;
+    background: url('images/sun.png');
+    background-size: cover;
+}
+
+#mercury-circle {
+    position: absolute;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    animation: orbit 2s linear infinite;
+}
+
+#mercury {
+    width: 12px;
+    height: 12px;
+    background: url('images/mercury.png');
+    background-size: cover;
+    animation: orbit 2s linear infinite;
+}
+
+#venus-circle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    animation: orbit 2.5s linear infinite;
+}
+
+#venus {
+    width: 25px;
+    height: 25px;
+    background: url('images/venus.png');
+    background-size: cover;
+    animation: orbit 2.5s linear infinite;
+}
+
+#earth-circle {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    animation: orbit 3s linear infinite;
+}
+
+#earth {
+    width: 25px;
+    height: 25px;
+    background: url('images/earth.png');
+    background-size: cover;
+    animation: orbit 3s linear infinite;
+}
+
+#mars-circle {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    animation: orbit 3.5s linear infinite;
+}
+
+#mars {
+    width: 23px;
+    height: 23px;
+    background: url('images/mars.png');
+    background-size: cover;
+    animation: orbit 3.5s linear infinite;
+}
+
+#jupiter-circle {
+    position: absolute;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    animation: orbit 7s linear infinite;
+}
+
+#jupiter {
+    width: 85px;
+    height: 85px;
+    background: url('images/jupiter.png');
+    background-size: cover;
+    animation: orbit 7s linear infinite;
+}
+
+#saturn-circle {
+    position: absolute;
+    width: 1200px;
+    height: 1200px;
+    border-radius: 50%;
+    animation: orbit 10s linear infinite;
+}
+
+#saturn {
+    width: 200px;
+    height: 200px;
+    background: url('images/saturn.png');
+    background-size: cover;
+}
+
+#uranus-circle {
+    position: absolute;
+    width: 1550px;
+    height: 1550px;
+    border-radius: 50%;
+    animation: orbit 12.5s linear infinite;
+}
+
+#uranus {
+    width: 175px;
+    height: 175px;
+    background: url('images/uranus.png');
+    background-size: cover;
+    animation: orbit 12.5s linear infinite;
+}
+
+#neptune-circle {
+    position: absolute;
+    width: 1700px;
+    height: 1700px;
+    border-radius: 50%;
+    animation: orbit 17.5s linear infinite;
+}
+
+#neptune {
+    width: 75px;
+    height: 75px;
+    background: url('images/neptune.png');
+    background-size: cover;
+    animation: orbit 17.5s linear infinite;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#colonise {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 25px;
+    font-size: 25px;
+}
+
+#decolonise {
+    position: fixed;
+    bottom: 0;
+    left: 130px;
+    margin: 25px;
+    font-size: 25px;
+}

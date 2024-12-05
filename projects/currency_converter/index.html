@@ -1,0 +1,72 @@
+<!--Name: Anson Mah-->
+<!--Date: 14 March, 2024 (π Day)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anson Mah - Oceanic Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="full_container" id="full_container">
+    <h1 id="title">Oceanic Currency Converter</h1>
+    <div class="mini_container">
+
+      <!--Stuff Top-->
+      <div class="all_boxes">
+        <select class="one_box currency_list" id="selected_currency_top">
+          <option value="AUD" selected>AUD - Australian Dollar</option>
+          <option value="FJD">FJD - Fijian Dollar</option>
+          <option value="NZD">NZD - New Zealand Dollar</option>
+          <option value="PGK">PGK - Papua New Guinean Kina</option>
+          <option value="SBD">SBD - Solomon Islands Dollar</option>
+          <option value="TOP">TOP - Tongan Paʻanga</option>
+          <option value="USD">USD - United States Dollar</option>
+          <option value="VUV">VUV - Vanuatu Vatu</option>
+          <option value="WST">WST - Samoan Tālā</option>
+          <option value="XPF">XPF - CFP Franc</option>
+        </select>
+        <div class="currency_boxes">
+          <div class="currency_symbol one_box" id="currency_symbol_top">$</div>
+          <input type="number" class="one_box valueBoth" value="1" id="input_value_top">
+        </div>
+      </div>
+
+      <!--Swap Button-->
+      <div id="swapButton">
+        <button onclick="swap()" class="button">Swap</button>
+      </div>
+
+      <!--Stuff Bottom-->
+      <div class="all_boxes">
+        <select class="one_box currency_list" id="selected_currency_bottom">
+          <option value="AUD">AUD - Australian Dollar</option>
+          <option value="FJD">FJD - Fijian Dollar</option>
+          <option value="NZD">NZD - New Zealand Dollar</option>
+          <option value="PGK">PGK - Papua New Guinean Kina</option>
+          <option value="SBD">SBD - Solomon Islands Dollar</option>
+          <option value="TOP">TOP - Tongan Paʻanga</option>
+          <option value="USD" selected>USD - United States Dollar</option>
+          <option value="VUV">VUV - Vanuatu Vatu</option>
+          <option value="WST">WST - Samoan Tālā</option>
+          <option value="XPF">XPF - CFP Franc</option>
+        </select>
+        <div class="currency_boxes">
+          <div class="currency_symbol one_box" id="currency_symbol_bottom">$</div>
+          <input type="number" class="one_box valueBoth" value="0.66" id="input_value_bottom">
+        </div>
+      </div>
+
+      <!--Map Button-->
+      <div id="map_button">
+        <button onclick="map()" class="button">Open Map</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

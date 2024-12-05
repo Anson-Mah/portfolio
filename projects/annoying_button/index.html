@@ -1,0 +1,37 @@
+<!--Date: 22 February, 2024-->
+<!--Name: Anson Mah-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click the Button</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Breathe-face-smile.svg/1200px-Breathe-face-smile.svg.png" type="image/x-icon">
+</head>
+<body>
+  <div class="button_a_div" id="button_a_div">
+    <p id="text_above"></p>
+    <button class="button_a" id="button_a" onclick="action1()" onmouseover="action2()">CLICK ME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</button>
+    <p id="click_counter">Clicks: 0</p>
+  </div>
+
+  <!--The quadratic equation that is seen when click_counter==64-->
+  <!--This div is initially hidden by CSS code-->
+  <div id="quadratic_equation_div">
+    <h3>In order to proceed, you must solve for x.</h3>
+    <h1>5x² - 10x - 15 = 0</h1>
+    <form>
+      <label>x = </label>
+      <input id="answer1" type="number" required>
+      <br><p>&</p>
+      <label>x = </label>
+      <input id="answer2" type="number" required>
+      <br><br>
+      <button class="check_answer_button" onclick="check_answer()">Check Answer</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

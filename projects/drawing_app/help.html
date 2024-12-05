@@ -1,0 +1,230 @@
+<!-- Name: Anson Mah -->
+<!-- Date: 27 April, 2024 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Michaelsoft Beint - Help</title>
+	<link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+
+<style>
+
+	nav {
+		background-color: grey;
+		height: 100%;
+		width: 16em;
+		position: fixed;
+	}
+
+	a {
+		color: white;
+		margin: 0.55em;
+		padding: 0.1em;
+		display: block;
+		font-size: 1.3rem;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	a:active {
+		font-weight: bold;
+	}
+
+	body {
+		color: white;
+		background-color: #303030;
+		margin: 0;
+	}
+
+	main {
+		margin-left: 16em;
+		padding: 1ch;
+	}
+
+	#topButton {
+		font-size: 1.05rem;
+		margin: 0 1ch;
+		padding: 0;
+		float: right;
+	}
+
+	#backToBeint {
+		margin-top: 3ch;
+		background-color: hsl(0, 0%, 40%);
+		width: fit-content;
+		padding: 1ch;
+	}
+
+	#backToBeint:hover {
+		text-decoration: none;
+		background-color: hsl(0, 0%, 30%);
+	}
+
+	#logo-small {
+		height: 3.5ch;
+		background-color: white;
+	}
+
+	#logo-header {
+		width: 11.25em;
+		margin: 1.5ch 0 -0.5ch 1ch;
+		background-color: hsl(0, 0%, 95%);
+	}
+
+	#logo-header:hover {
+		background-color: hsl(0, 0%, 100%)
+	}
+
+	#logo-header-a {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		margin-bottom: 1.5ch;
+	}
+
+</style>
+
+<body>
+
+	<nav>
+		<a href="index.html" id="logo-header-a"><img src="logo_full.png" id="logo-header"></a>
+		<a href="#overview">Overview & Features</a>
+		<a href="#brush">Brush</a>
+		<a href="#pencil">Pencil</a>
+		<a href="#eraser">Eraser</a>
+		<a href="#rectangle">Rectangle</a>
+		<a href="#circle">Circle</a>
+		<a href="#ellipse">Ellipse</a>
+		<a href="#line">Line</a>
+		<a href="#sizes">Brush Size & Eraser Size</a>
+		<a href="#keyboard">Keyboard Functionality</a>
+		<a href="index.html" id="backToBeint">Back to Beint</a>
+	</nav>
+
+	<main>
+
+		<section id="overview">
+			<h1>Overview & Features</h1>
+			<p>Michaelsoft Beint is a drawing program that utilizes the HTML canvas element.</p>
+			<p>Some key features of Michaelsoft Beint include:</p>
+			<ul>
+				<li>A dedicated toolbar with 7 tools</li>
+				<li>Separate sizes for the Brush & Eraser</li>
+				<li>Painting with any color you wish</li>
+				<li>Keyboard Shortcuts</li>
+			</ul>
+		</section>
+
+		<hr>
+
+		<section id="brush">
+			<h1>Brush</h1>
+			<p>Keyboard Shortcut: B</p>
+			<p>The Brush Tool is selected by default when you open Michaelsoft Beint.</p>
+			<p>The Brush Tool mimics a real life paintbrush, being used to apply color onto the canvas.</p>
+		</section>
+
+		<hr>
+
+		<section id="pencil">
+			<h1>Pencil</h1>
+			<p>Keyboard Shortcut: P</p>
+			<p>The Pencil Tool mimics a real life pencil.</p>
+			<p>The Pencil Tool is like a mini version of the brush.</p>
+			<p>The Pencil Tool does not have an adjustable size, its brush size is always set to 1.</p>
+		</section>
+
+		<hr>
+
+		<section id="eraser">
+			<h1>Eraser</h1>
+			<p>Keyboard Shortcut: E</p>
+			<p>The Eraser Tool mimics a real life eraser, erasing whatever is on the canvas.</p>
+			<p>The Eraser Tool works by using the same functionality as the brush except for the fact that it is always white, the canvas' color.</p>
+		</section>
+
+		<hr>
+
+		<section id="rectangle">
+			<h1>Rectangle</h1>
+			<p>Keyboard Shortcut: R</p>
+			<p>The Rectangle Tool draws a rectangle onto the canvas.</p>
+			<p></p>
+		</section>
+
+		<hr>
+
+		<section id="circle">
+			<h1>Circle</h1>
+			<p>Keyboard Shortcut: C</p>
+			<p>The Circle Tool draws a circle onto the canvas.</p>
+		</section>
+
+		<hr>
+
+		<section id="ellipse">
+			<h1>Ellipse</h1>
+			<p>Keyboard Shortcut: C</p>
+			<p>The Ellipse Tool draws an ellipse onto the canvas.</p>
+		</section>
+
+		<hr>
+
+		<section id="line">
+			<h1>Line</h1>
+			<p>Keyboard Shortcut: L</p>
+			<p>The Line Tool draws a straight line onto the canvas.</p>
+		</section>
+
+		<hr>
+
+		<section id="sizes">
+			<h1>Brush Size & Eraser Size</h1>
+			<p>Keyboard Shortcut (Increase Size): ] or +</p>
+			<p>Keyboard Shortcut (Decrease Size): [ or -</p>
+			<p>The Brush Size does not affect only the brush. It also affects the thickness of other tools, such as: rectangles, circles, ellipses, and lines.</p>
+			<p>The Eraser Size only affects the eraser.</p>
+		</section>
+
+		<hr>
+
+		<section id="keyboard">
+			<h1>Keyboard Functionality</h1>
+			<p>Every tool in Michaelsoft Beint is paired with a specific keyboard key.</p>
+			<p style="margin-bottom: 3ch;">These pairings allow for quick access to the available tools, making your work faster.</p>
+			<p>The tool-key pairings have been listed for your convenience:</p>
+			<ul>
+				<li>Brush | B</li>
+				<li>Pencil | P</li>
+				<li>Eraser | E</li>
+				<li>Rectangle | R</li>
+				<li>Circle | C</li>
+				<li>Ellipse | S</li>
+				<li>Line | L</li>
+				<li>Brush Size & Eraser Size (Increase) | ']' or '+'</li>
+				<li>Brush Size & Eraser Size (Decrease) | '[' or '-'</li>
+				<li>Clear Canvas | Delete</li>
+				<li>Save Canvas | Ctrl + S</li>
+				<li>Undo | Ctrl + Z</li>
+				<li>Redo | Ctrl + Y</li>
+			</ul>
+		</section>
+
+		<hr>
+
+		<p style="margin-bottom: 5px;"><a href="index.html"><img src="logo_full.png" id="logo-small"></a><a href="#top" id="topButton">Go to Top</a></p>
+
+	</main>
+	
+</body>
+
+</html>

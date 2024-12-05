@@ -1,0 +1,61 @@
+<!--Name: Anson Mah-->
+<!--Date: 12 April, 2024-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will Wood Song Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+  #audioFileThatIsPairedWithTheQuestion {
+    margin-bottom: 1.25em;
+  }
+
+  /* Moves quiz closer to page center */
+  #actual_quiz {
+    top: 10vh;
+  }
+
+</style>
+
+<body>
+  
+  <!--Tells Javascript what questions to show and how many questions there are for this particular quiz.-->
+  <option id="identifier" value="will_wood"></option>
+
+  <h1>Will Wood Song Quiz</h1>
+  <hr>
+
+  <div id="actual_quiz">
+    
+    <!--A container for the main content of the quiz. QMO stands for Questions Media Objects-->
+    <div id="qmo">
+      <h2 id="question"></h2>
+    </div>
+
+    <!--Shows user how much of the quiz they have completed.-->
+    <div id="progress">
+      <b><p id="progress_fraction"></p></b>
+      <b><p id="progress_percent"></p></b>
+    </div>
+
+  </div>
+
+  <!--Displays the quiz results after all questions have been answered.-->
+  <div id="results_container">
+    <p id="results_text"></p>
+    <a href="will_wood.html">Retake Quiz</a>
+    <a href="index.html">Take Another Quiz</a>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

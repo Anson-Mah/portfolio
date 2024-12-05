@@ -1,0 +1,115 @@
+/* Name: Anson Mah */
+/* Date: 10 April, 2024 */
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--color);
+}
+
+/* Centers the title. */
+h1 {
+  text-align: center;
+}
+
+/* Removes the identifier from the normal flow of the page. */
+#identifier {
+ position: absolute;
+}
+
+/* Allows for the quiz to be moved closer to the center if wanted. */
+#actual_quiz {
+  position: relative;
+}
+
+/* Centers the question area. */
+#qmo {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Adds a border around images. I mainly did this so that the LATAM flags would not blend in with the background. */
+img {
+  width: 39em;
+  border: 0.2em dashed rgba(0, 0, 0, 0.5);
+}
+
+/* Makes the multiple choice options display in a 2x2 grid. */
+#multiple_choice {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1.1em;
+}
+
+.options {
+  height: 3.99em;
+}
+
+.options:disabled {
+  color: black;
+  border-radius: 10%;
+}
+
+.correct {
+  background-color: green;
+}
+
+#show_correct_answer {
+  font-size: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+#text_input {
+  padding: 1em;
+  font-size: 1.5em;
+  padding-bottom: 0;
+}
+
+#input_box {
+  padding: 3px;
+  font-size: 0.6em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#submit_button {
+  font-size: 0.7em;
+  padding: 0.1em 0.5em;
+  margin: 0.6em;
+}
+
+/* Centers the progress indicators. */
+#progress {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  margin: 0.5em;
+  font-size: 1.25em;
+}
+
+/* Hides the results until Javascript shows them. */
+#results_container {
+  visibility: hidden;
+  text-align: center;
+  font-size: 2em;
+}
+
+#results_text {
+  margin-bottom: 1em;
+}
+
+/* Styles the homepage buttons & the result buttons. */
+a {
+  text-decoration: none;
+  color: var(--color);
+  padding: 0.5em;
+  font-size: 0.8em;
+  background-color: var(--quiz_choice-color);
+  margin-right: 0.5em;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: var(--quiz_choice-hover);
+}

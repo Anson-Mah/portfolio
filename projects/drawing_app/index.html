@@ -1,0 +1,144 @@
+<!-- Name: Anson Mah -->
+<!-- Date: 26 April, 2024 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michaelsoft Beint</title>
+	<link rel="shortcut icon" href="logo_mini.png" type="image/x-icon">
+</head>
+
+<style>
+
+	/* Centers the page elements. */
+	body {
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #303030;
+		gap: 10px;
+	}
+
+	#toolsContainer {
+		background-color: beige;
+		display: grid;
+		gap: 0.5em;
+		padding: 1em;
+		font-size: 1.5em;
+	}
+
+	.button-class {
+		font-size: 0.8em;
+	}
+
+	/* Makes the Undo & Redo buttons sit on a single line. */
+	.history-button {width: 48.5%;}
+	#undoButton {float: left;}
+	#redoButton {float: right;}
+
+	canvas {
+		background-color: white;
+		margin: 1em 0;
+	}
+
+	#logoContainer {
+		width: 800px; /* 800px is the width of the canvas. We are making the logo container's width match with the width of the canvas. */
+		background-color: rgb(223, 223, 223);
+	}
+
+	#logoContainer > img {
+		height: 10em;
+	}
+
+</style>
+
+<body>
+
+	<div id="toolsContainer">
+
+		<h2>Select Tool</h2>
+
+		<div class="toolbar-tools">
+			<input type="radio" id="brush" name="toolSelector" value="brush" checked>
+			<label for="brush">Brush</label>
+		</div>
+
+		<div class="toolbar-tools">
+			<input type="radio" id="pencil" name="toolSelector" value="pencil">
+			<label for="pencil">Pencil</label>
+		</div>
+
+		<div class="toolbar-tools">
+			<input type="radio" id="eraser" name="toolSelector" value="eraser">
+			<label for="eraser">Eraser</label>
+		</div>
+
+		<div class="toolbar-tools">
+			<input type="radio" id="rectangle" name="toolSelector" value="rectangle">
+			<label for="rectangle">Rectangle</label>
+		</div>
+
+		<div class="toolbar-tools">
+			<input type="radio" id="circle" name="toolSelector" value="circle">
+			<label for="circle">Circle</label>
+		</div>
+
+		<div class="toolbar-tools">
+			<input type="radio" id="ellipse" name="toolSelector" value="ellipse">
+			<label for="ellipse">Ellipse</label>
+		</div>
+
+		<div class="toolbar-tools">
+			<input type="radio" id="line" name="toolSelector" value="line">
+			<label for="line">Line</label>
+		</div>
+
+		<br>
+
+		<div id="brushSizeContainer">
+      <label>Brush Size:</label>
+      <input type="number" id="brushSizeInput" class="brushSizes" min="1" value="3" placeholder="Brush Size">
+    </div>
+
+		<div id="eraserSizeContainer">
+      <label>Eraser Size:</label>
+      <input type="number" id="eraserSizeInput" class="brushSizes" min="1" value="3" placeholder="Eraser Size">
+    </div>
+
+		<div id="colorPickerContainer">
+			<label>Color: </label>
+			<input type="color" id="colorPicker">
+		</div>	
+
+		<br>
+
+    <button id="clearCanvasbutton" class="button-class" onclick="clear_canvas()">Clear Canvas</button>
+
+    <button id="saveImagebutton" class="button-class" onclick="save_image()">Save Painting</button>
+
+		<button id="helpbutton" class="button-class" onclick="location.href='help.html'">Help (?)</button>
+
+		<span>
+			<button id="undoButton" class="button-class history-button" onclick="undo()">Undo</button>
+			<button id="redoButton" class="button-class history-button" onclick="redo()">Redo</button>
+		</span>
+
+	</div>
+
+	<div>
+
+		<canvas id="canvas" height="550" width="800"></canvas>
+
+		<div id="logoContainer"><img src="logo_full.png" id="logo_full"></div>
+
+	</div>
+
+	<script src="script.js"></script>
+
+</body>
+
+</html>

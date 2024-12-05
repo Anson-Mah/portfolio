@@ -1,0 +1,82 @@
+<!--Name: Anson Mah-->
+<!--Date: 12 April, 2024-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Various Chess Puzzles</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+  #text_input {
+    padding-bottom: 0;
+  }
+
+  img {
+    width: 32em;
+  }
+
+  #chess_input_notice {
+    margin-bottom: 0;
+  }
+
+  #show_correct_answer {
+    margin-top: 1em;
+  }
+
+  #algebraicChessNotationWikipediaLink {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    font-size: 1em;
+    margin-right: 0;
+    margin-left: 0.2ch;
+    color: black;
+  }
+
+  #algebraicChessNotationWikipediaLink:hover {
+    color: red;
+    text-decoration: underline;
+  }
+
+</style>
+
+<body>
+
+  <!--Tells Javascript what questions to show and how many questions there are for this particular quiz.-->
+  <option id="identifier" value="chess"></option>
+
+  <h1>Various Chess Puzzles</h1>
+  <hr>
+
+  <div id="actual_quiz">
+    
+    <!--A container for the main content of the quiz.-->
+    <div id="qmo">
+      <h2 id="question"></h2>
+    </div>
+
+    <!--Shows user how much of the quiz they have completed.-->
+    <div id="progress">
+      <b><p id="progress_fraction"></p></b>
+      <b><p id="progress_percent"></p></b>
+    </div>
+
+  </div>
+
+  <!--Displays the quiz results after all questions have been answered.-->
+  <div id="results_container">
+    <p id="results_text"></p>
+    <a href="chess.html">Retake Quiz</a>
+    <a href="index.html">Take Another Quiz</a>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

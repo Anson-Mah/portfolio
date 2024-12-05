@@ -1,0 +1,105 @@
+/* Name: Anson Mah */
+/* Date: 14 March, 2024 (π Day) */
+
+.full_container {
+  border-radius: 5%;
+  background-color: rgba(204, 242, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url('island_background.jpg');
+  font-family: sans-serif;
+  background-size: cover;
+  gap: 2em;
+}
+
+.full_container {
+  padding: 1em;
+  position: relative;
+}
+
+.all_boxes {
+  padding: 1em 0;
+  display: grid;
+  gap: 0.5em;
+}
+
+#title, #swapButton, #map_button {
+  text-align: center;
+}
+
+.one_box {
+  padding: 0.5em 0.2em;
+}
+
+.currency_symbol {
+  border: 1px black solid;
+  width: fit-content;
+  text-align: center;
+}
+
+.currency_boxes {
+  display: flex;
+  gap: 0.45em;
+}
+
+.currency_symbol {
+  width: 1.5em;
+  background-color: white;
+}
+
+.valueBoth {
+  width: 26.3em;
+}
+
+.currency_list {
+  padding: 0.9em 0.2em;
+  width: 30em;
+}
+
+#map_with_names {
+  height: 50vh;
+  border: 5px black solid;
+}
+
+.button {
+  padding: 0.5em 1em;
+}
+
+/* If screen small, map show below not right. */
+@media (max-width: 1350px) {
+  body {
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  #map_with_names {
+    height: 35vw;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 1vh;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(155, 100%, 30%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(155, 100%, 50%);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(155, 70%, 50%);
+  }
+}
