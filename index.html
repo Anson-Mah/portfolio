@@ -12,12 +12,31 @@
 </head>
 
 <style>
-	nav {
-		backdrop-filter: blur(10px);
-	}
-
 	#navbarNav {
 		width: auto; /* Removes unncessary space from offcanvas navbar */
+	}
+
+	#wavy_name span {
+		font-size: 4em;
+		animation: move_vertical 2s linear infinite;
+	}
+
+	@keyframes move_vertical {
+		0% {
+			transform: translateY(0px);
+		}
+		25% {
+			transform: translateY(10px);
+		}
+		50% {
+			transform: translateY(0px);
+		}
+		75% {
+			transform: translateY(-10px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
 	}
 </style>
 
@@ -56,31 +75,50 @@
 		</nav>
 	</div>
 
-	<!--ABOUT ME-->
-	<div class="row" id="about_me">
-		<div class="col-6">
-			<img src="images/id_picture.png" class="img-thumbnail float-end">
-		</div>
-
-		<div class="col-6 align-self-center">
-			<h2 class="mb-3">Hello, I am <span class="text-primary">Anson Mah</span></h2>
+	<!--HERO SECTION-->
+	<div class="container text-center" id="hero">
+		<div id="wavy_name">
+			<span>A</span>
+			<span>N</span>
+			<span>S</span>
+			<span>O</span>
+			<span class="me-4">N</span>
 			
-			<div class="p-1">
-				<i class="text-primary bi bi-geo-alt"></i>
-				<span>New Jersey, USA</span>
-			</div>
+			<span>M</span>
+			<span>A</span>
+			<span>H</span>
+		</div>
+		<p>Welcome to my portfolio!</p>
+	</div>
 
-			<div class="p-1">
-				<i class="text-primary bi bi-person"></i>
-				<span>15 Years Old</span>
-			</div>
 
-			<div class="p-1">
-				<i class="text-primary bi bi-window-stack"></i>
-				<span>Frontend Developer</span>
+	<!--ABOUT ME-->
+	<!-- <div class="container" id="about_me">
+		<div class="row">
+			<div class="col-6">
+				<img src="images/id_picture.png" class="img-thumbnail float-end">
+			</div>
+	
+			<div class="col-6 align-self-center">
+				<h2 class="mb-3">Hello, I am <span class="text-primary">Anson Mah</span></h2>
+				
+				<div class="p-1">
+					<i class="text-primary bi bi-geo-alt"></i>
+					<span>New Jersey, USA</span>
+				</div>
+	
+				<div class="p-1">
+					<i class="text-primary bi bi-person"></i>
+					<span>15 Years Old</span>
+				</div>
+	
+				<div class="p-1">
+					<i class="text-primary bi bi-window-stack"></i>
+					<span>Frontend Developer</span>
+				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!--EDUCATION-->
 
