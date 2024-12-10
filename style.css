@@ -1,0 +1,40 @@
+#navbarNav {
+	width: auto; /* Removes unncessary space from offcanvas navbar */
+}
+
+#wavy_name {
+	user-select: none;
+}
+
+#wavy_name span {
+	display: inline-block;
+	font-size: 10vw;
+	animation: move_vertical 2s linear infinite;
+	animation-delay: calc(-0.2s*var(--i));
+}
+
+#hero p {
+	font-size: 3.5vw;
+}
+
+@keyframes move_vertical {
+	0% {
+		transform: translateY(0px);
+	}
+	25% {
+		transform: translateY(-1.5vw);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	75% {
+		transform: translateY(1.5vw);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+#hero {
+	height: 90vh;
+}
