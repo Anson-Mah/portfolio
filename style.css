@@ -1,28 +1,35 @@
+/* Adds a background blur in nav */
+nav {
+	background-color: rgba(256, 256, 256, 0.8);
+	backdrop-filter: blur(10px);
+}
+
 #navbarNav {
 	width: auto; /* Removes unncessary space from offcanvas navbar */
 }
 
 #wavy_name {
-	user-select: none;
+	user-select: none; /* Makes "ANSON MAH" text unselectable */
 }
 
 #wavy_name span {
-	display: inline-block;
+	display: inline-block; 
 	font-size: 10vw;
 	animation: move_vertical 2s linear infinite;
-	animation-delay: calc(-0.2s*var(--i));
+	animation-delay: calc(-0.2s*var(--i)); 
 }
 
 #hero p {
-	font-size: 3.5vw;
+	font-size: 3.5vw; /* Sizes the "Welcome to my portfolio!" text */
 }
 
+/* Animation for wavy text */
 @keyframes move_vertical {
 	0% {
 		transform: translateY(0px);
 	}
 	25% {
-		transform: translateY(-1.5vw);
+		transform: translateY(-1.5vw); 
 	}
 	50% {
 		transform: translateY(0px);
