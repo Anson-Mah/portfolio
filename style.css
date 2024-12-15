@@ -1,7 +1,5 @@
-/* Adds a background blur in nav */
 nav {
-	background-color: rgba(256, 256, 256, 0.8);
-	backdrop-filter: blur(10px);
+	background-color: rgba(256, 256, 256, 0.9); /* Makes navbar semi-transparent */
 }
 
 #navbarNav {
@@ -19,7 +17,7 @@ nav {
 	animation-delay: calc(-0.2s*var(--i)); 
 }
 
-#hero p {
+header p {
 	font-size: 3.5vw; /* Sizes the "Welcome to my portfolio!" text */
 }
 
@@ -42,6 +40,10 @@ nav {
 	}
 }
 
-#hero {
-	height: 90vh;
+header {
+	height: 85vh; /* Makes the hero section take up the full screen when user visits the page */
+}
+
+section {
+	padding-top: 5em; /* Ensures that when you click on a navbar link, no parts of the section go behind the navbar*/
 }

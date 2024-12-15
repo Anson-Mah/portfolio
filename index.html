@@ -46,8 +46,8 @@
 	</nav>
 
 	<!--HERO SECTION-->
-	<div class="container text-center d-flex flex-column justify-content-center mb-5" id="hero">
-		<div id="wavy_name" class="align-middle">
+	<header class="container text-center d-flex flex-column justify-content-center mb-5">
+		<div id="wavy_name">
 			<span style="--i:1">A</span>
 			<span style="--i:2">N</span>
 			<span style="--i:3">S</span>
@@ -59,12 +59,11 @@
 			<span style="--i:8">H</span>
 		</div>
 		<p>Welcome to my portfolio!</p>
-	</div>
-
+	</header>
 
 	<!--ABOUT ME-->
-	<div class="container" id="about_me">
-		<h4 class="text-center text-secondary mb-3">ABOUT ME</h4>
+	<section class="container" id="about_me">
+		<h4 class="text-center text-secondary my-3">ABOUT ME</h4>
 		<div class="row">
 			<div class="col-6">
 				<img src="images/id_picture.png" class="img-thumbnail float-end">
@@ -89,12 +88,13 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!--EDUCATION-->
-	<div class="container" id="education">
-		<h4 class="text-center text-secondary mt-5 mb-3">EDUCATION</h4>
-		<div class="row text-center">
+	<section class="container" id="education">
+		<h4 class="text-center text-secondary">EDUCATION</h4>
+		<p class="text-center">I am currently in High School.</p>
+		<!-- <div class="row text-center">
 			<div class="col-6">
 				<h5>Grade 9</h5>
 				<li>Foundations of Computer Science & Web Design</li>
@@ -106,19 +106,19 @@
 				<li>Web Application Development</li>
 				<li>Networking & Cybersecurity</li>
 			</div>
-		</div>
-	</div>
+		</div> -->
+	</section>
 
 	<!--WORKS-->
-	<div class="container" id="works">
-		<h4 class="text-center text-secondary mt-5 mb-4">WORKS</h4>
+	<section class="container" id="works">
+		<h4 class="text-center text-secondary my-4">WORKS</h4>
 
 		<div class="row">
 			<div class="col-6 align-self-center text-end p-4">
 				<h2 class="mb-3">Brick Breaker</h2>
 				<p>A clone of Atari Breakout.</p>
-				<a class="btn btn-primary" href="projects/brick_breaker/index.html" target="_blank">View Project</a>
-				<a class="btn btn-primary" href="https://github.com/Anson-Mah-ACITECH/brick-breaker" target="_blank">View Repository</a>
+				<a class="btn btn-primary mb-2" href="projects/brick_breaker/index.html" target="_blank">View Project</a>
+				<a class="btn btn-primary mb-2" href="https://github.com/Anson-Mah-ACITECH/brick-breaker" target="_blank">View Repository</a>
 			</div>
 
 			<div class="col-6 p-0">
@@ -134,8 +134,8 @@
 			<div class="col-6 align-self-center p-4">
 				<h2 class="mb-3">Quiz App</h2>
 				<p>Choose to take one of our four available quizzes!</p>
-				<a class="btn btn-primary" href="projects/brick_breaker/index.html" target="_blank">View Project</a>
-				<a class="btn btn-primary" href="https://github.com/Atlantic-County-Institute-of-Technology/quiz-app-Anson-Mah-ACITECH" target="_blank">View Repository</a>
+				<a class="btn btn-primary mb-2" href="projects/brick_breaker/index.html" target="_blank">View Project</a>
+				<a class="btn btn-primary mb-2" href="https://github.com/Atlantic-County-Institute-of-Technology/quiz-app-Anson-Mah-ACITECH" target="_blank">View Repository</a>
 			</div>
 		</div>
 
@@ -143,33 +143,44 @@
 			<div class="col-6 align-self-center text-end p-4">
 				<h2 class="mb-3">Oceanic Currency Converter</h2>
 				<p>A useful tool to convert any currency used in Oceania.</p>
-				<a class="btn btn-primary" href="projects/currency_converter/index.html" target="_blank">View Project</a>
-				<a class="btn btn-primary" href="https://github.com/Atlantic-County-Institute-of-Technology/converter-program-Anson-Mah-ACITECH" target="_blank">View Repository</a>
+				<a class="btn btn-primary mb-2" href="projects/currency_converter/index.html" target="_blank">View Project</a>
+				<a class="btn btn-primary mb-2" href="https://github.com/Atlantic-County-Institute-of-Technology/converter-program-Anson-Mah-ACITECH" target="_blank">View Repository</a>
 			</div>
 
 			<div class="col-6 p-0">
 				<img src="images/project_previews/oceanic_currency_converter.png" class="img-fluid">
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!--SKILLS-->
-	<div class="container" id="skills">
-		<h4 class="text-center text-secondary mt-5 mb-5">SKILLS</h4>
-		<!--
-		<img src="images/logos/html5.svg" class="img-fluid">
-		<img src="images/logos/css3.svg" class="img-fluid">
-		<img src="images/logos/javascript.svg" class="img-fluid"> 
-		-->
-	</div>
+	<section class="container" id="skills">
+		<h4 class="text-center text-secondary my-4">SKILLS</h4>
+		<div class="row">
+			<div class="col-3">
+				<img src="images/logos/html5.svg" alt="HTML5 Logo" class="img-fluid">
+				<p class="text-center p-1">HTML</p>
+			</div>
+			<div class="col-3">
+				<img src="images/logos/css3.svg" alt="CSS3 Logo" class="img-fluid">
+				<p class="text-center p-1">CSS</p>
+			</div>
+			<div class="col-3">
+				<img src="images/logos/javascript.svg" alt="Javascript Logo" class="img-fluid">
+				<p class="text-center p-1">Javascript</p>
+			</div>
+			<div class="col-3">
+				<img src="images/logos/bootstrap.svg" alt="Bootstrap Logo" class="img-fluid">
+				<p class="text-center p-1">Bootstrap</p>
+			</div>
+		</div>
+	</section>
 
 	<!--CONTACT-->
-	<div class="container" id="contact">
-		<h4 class="text-center text-secondary mt-5 mb-5">CONTACT</h4>
-	</div>
+	<section class="container" id="contact">
+		<h4 class="text-center text-secondary">CONTACT</h4>
+	</section>
 	
-
-	<!--Popper.js--> <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 	<!--Bootstrap Javascript--> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>
