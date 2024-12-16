@@ -47,3 +47,11 @@ header {
 section {
 	padding-top: 5em; /* Ensures that when you click on a navbar link, no parts of the section go behind the navbar*/
 }
+
+textarea {
+	height: 10em;
+}
+
+#submit_button {
+	width: 100%;
+}
