@@ -11,10 +11,10 @@ nav {
 }
 
 #wavy_name span {
-	display: inline-block; 
-	font-size: 10vw;
-	animation: move_vertical 2s linear infinite;
-	animation-delay: calc(-0.2s*var(--i)); 
+	display: inline-block; /* Makes text line up horizontally */
+	font-size: 10vw; /* Sizes the wavy name text */
+	animation: move_vertical 2s linear infinite; /* An animation is called that moves the letter up and down */
+	animation-delay: calc(-0.2s*var(--i)); /* A delay is set on each individual letter, forming the wavy effect */
 }
 
 header p {
@@ -57,12 +57,14 @@ textarea {
 }
 
 .social_media_icons {
-	color: hsl(0, 0%, 50%);
-	transition: color 0.2s;
+	color: hsl(0, 0%, 50%); /* Logos are grey by default */
+	transition: color 0.2s; /* Allows for smooth hover transition */
+
+	/* Moves logos up by 0.5ch */
 	position: relative;
 	bottom: 0.5ch;
 }
 
 .social_media_icons:hover {
-	color: hsl(0, 0%, 0%);
+	color: hsl(0, 0%, 0%); /* Icon will turn black when hovered */
 }
