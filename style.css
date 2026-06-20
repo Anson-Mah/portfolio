@@ -48,6 +48,12 @@ section {
 	padding-top: 5em; /* Ensures that when you click on a navbar link, no parts of the section go behind the navbar*/
 }
 
+/* #skills img {
+  width: 300px;
+  height: 300px;
+	aspect-ratio: 1 / 1;
+} */
+
 textarea {
 	height: 10em;
 }
