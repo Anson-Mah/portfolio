@@ -74,3 +74,8 @@ textarea {
 .social_media_icons:hover {
 	color: hsl(0, 0%, 0%); /* Icon will turn black when hovered */
 }
+
+.map {
+	border: 6px solid black;
+	border-radius: 10px;
+}
