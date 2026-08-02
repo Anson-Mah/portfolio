@@ -84,7 +84,6 @@ SMALL NAVBAR (HAMBURGER BUTTON)
 	top: 8ch;
 	right: 1ch;
 	z-index: 1;
-
 }
 
 /* Determines when the standard navigation bar turns into a hamburger button */
@@ -162,17 +161,14 @@ h1 {
 	text-align: center;
 }
 
-.skibidi {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 /* ================
 ABOUT ME
 ================ */
 
-#about_me_skibidi {
+#about_me_info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	gap: 10vw;
 }
 
@@ -189,6 +185,12 @@ li {
 
 #id_picture {
 	border: 5px solid var(--name-color);
+}
+
+@media (max-width: 565px) {
+	#about_me_info {
+		flex-direction: column;
+	}
 }
 
 /* ================
@@ -251,18 +253,76 @@ PROJECTS
 	}
 }
 
+@media (max-width: 750px) {
+	#grid_of_projects {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.info {
+		text-align: center;
+
+		h2 {
+			margin: 0;
+		}
+	}
+
+	#occ_img {
+		order: 1;
+		padding-bottom: 1ch;
+	}
+
+	#occ_info {
+		order: 2;
+	}
+
+	#beint_img {
+		order: 3;
+		padding-bottom: 1ch;
+	}
+
+	#beint_info {
+		order: 4;
+	}
+
+	#projects img {
+		margin-top: 3.5em;
+	}
+}
+
 /* ================
 CARTOGRAPHY
 ================ */
 
-#cartography_skibidi {
+#maps_container {
+	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	gap: 2em;
 }
 
 #cartography img {
 	height: 500px;
 	border: 2px solid black;
+}
+
+@media (max-width: 800px) {
+	#cartography img {
+		height: 400px;
+	}
+}
+
+@media (max-width: 660px) {
+	#cartography img {
+		height: 300px;
+	}
+}
+
+@media (max-width: 500px) {
+	#cartography img {
+		height: 200px;
+	}
 }
 
 /* ================
@@ -285,6 +345,18 @@ SKILLS
 .logo_text {
 	margin: 0;
 	text-align: center;
+}
+
+@media (max-width: 620px) {
+	#skills_grid {
+		grid-template-columns: auto auto auto;
+	}
+}
+
+@media (max-width: 460px) {
+	#skills_grid {
+		grid-template-columns: auto auto;
+	}
 }
 
 /* ================
