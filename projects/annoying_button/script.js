@@ -59,16 +59,16 @@ function action1() {
     document.getElementById("text_above").style.bottom='17.5vh';
     document.getElementById("quadratic_equation_div").style.visibility='visible';
   } else if (click_counter>49 && click_counter%2==0 && click_counter<64) {
-    // Plays another Taylor Swift song on top of all the already playing ones.
+    // Plays another song on top of all the already playing ones.
     // The function is called every other click. 
-    taylor_swift();
-    document.getElementById("text_above").innerHTML = "I hope you like Taylor Swift :3";
+    the_amazing_music_man();
+    document.getElementById("text_above").innerHTML = "Hopefully this will get you to stop :3";
   } else if (click_counter>38) {
-    document.getElementById("text_above").innerHTML = "I hope you like Taylor Swift :3";
+    document.getElementById("text_above").innerHTML = "Hopefully this will get you to stop :3";
   } else if (click_counter==38) {
-    // Calls a function that plays a random song by Taylor Swift.
-    taylor_swift();
-    document.getElementById("text_above").innerHTML = "I hope you like Taylor Swift :3";
+    // Calls a function that plays a random song from a handpicked catalogue.
+    the_amazing_music_man();
+    document.getElementById("text_above").innerHTML = "Hopefully this will get you to stop :3";
   } else if (click_counter>37) {
     document.getElementById("text_above").innerHTML = "";
   } else if (click_counter>32) {
@@ -93,88 +93,34 @@ function action1() {
 }
 
 // The function that plays a random song by Taylor Swift.
-function taylor_swift() {
+function the_amazing_music_man() {
   // An array listing the tracks of three Taylor Swift albums.
-  const taylorSwiftSongs = [
-    //1989 (Taylor's Version)
-    'Taylor Swift Songs/1989 TV/01 Welcome To New York.mp3',
-    'Taylor Swift Songs/1989 TV/02 Blank Space.mp3',
-    'Taylor Swift Songs/1989 TV/03 Style.mp3',
-    'Taylor Swift Songs/1989 TV/04 Out Of The Woods.mp3',
-    'Taylor Swift Songs/1989 TV/05 All You Had To Do Was Stay.mp3',
-    'Taylor Swift Songs/1989 TV/06 Shake It Off.mp3',
-    'Taylor Swift Songs/1989 TV/07 I Wish You Would.mp3',
-    'Taylor Swift Songs/1989 TV/08 Bad Blood.mp3',
-    'Taylor Swift Songs/1989 TV/09 Wildest Dreams.mp3',
-    'Taylor Swift Songs/1989 TV/10 How You Get The Girl.mp3',
-    'Taylor Swift Songs/1989 TV/11 This Love.mp3',
-    'Taylor Swift Songs/1989 TV/12 I Know Places.mp3',
-    'Taylor Swift Songs/1989 TV/13 Clean.mp3',
-    'Taylor Swift Songs/1989 TV/14 Wonderland.mp3',
-    'Taylor Swift Songs/1989 TV/15 You Are In Love.mp3',
-    'Taylor Swift Songs/1989 TV/16 New Romantics.mp3',
-    'Taylor Swift Songs/1989 TV/17 Slut!.mp3',
-    'Taylor Swift Songs/1989 TV/18 Say Do Not Go.mp3',
-    'Taylor Swift Songs/1989 TV/19 Now That We Do Not Talk.mp3',
-    'Taylor Swift Songs/1989 TV/20 Suburban Legends.mp3',
-    'Taylor Swift Songs/1989 TV/21 Is It Over Now.mp3',
-
-    //Lover
-    'Taylor Swift Songs/Lover/01 I Forgot That You Existed.mp3',
-    'Taylor Swift Songs/Lover/02 Cruel Summer.mp3',
-    'Taylor Swift Songs/Lover/03 Lover.mp3',
-    'Taylor Swift Songs/Lover/04 The Man.mp3',
-    'Taylor Swift Songs/Lover/05 The Archer.mp3',
-    'Taylor Swift Songs/Lover/06 I Think He Knows.mp3',
-    'Taylor Swift Songs/Lover/07 Miss Americana & The Heartbreak Prince.mp3',
-    'Taylor Swift Songs/Lover/08 Paper Rings.mp3',
-    'Taylor Swift Songs/Lover/09 Cornelia Street.mp3',
-    'Taylor Swift Songs/Lover/10 Death By A Thousand Cuts.mp3',
-    'Taylor Swift Songs/Lover/11 London Boy.mp3',
-    'Taylor Swift Songs/Lover/12 Soon You Will Get Better.mp3',
-    'Taylor Swift Songs/Lover/13 False God.mp3',
-    'Taylor Swift Songs/Lover/14 You Need To Calm Down.mp3',
-    'Taylor Swift Songs/Lover/15 Afterglow.mp3',
-    'Taylor Swift Songs/Lover/16 ME!.mp3',
-    'Taylor Swift Songs/Lover/17 It Is Nice To Have A Friend.mp3',
-    'Taylor Swift Songs/Lover/18 Daylight.mp3',
-
-    //Speak Now (Taylor's Version)
-    'Taylor Swift Songs/Speak Now TV/01 Mine.mp3',
-    'Taylor Swift Songs/Speak Now TV/02 Sparks Fly.mp3',
-    'Taylor Swift Songs/Speak Now TV/03 Back To December.mp3',
-    'Taylor Swift Songs/Speak Now TV/04 Speak Now.mp3',
-    'Taylor Swift Songs/Speak Now TV/05 Dear John.mp3',
-    'Taylor Swift Songs/Speak Now TV/06 Mean.mp3',
-    'Taylor Swift Songs/Speak Now TV/07 The Story Of Us.mp3',
-    'Taylor Swift Songs/Speak Now TV/08 Never Grow Up.mp3',
-    'Taylor Swift Songs/Speak Now TV/09 Enchanted.mp3',
-    'Taylor Swift Songs/Speak Now TV/10 Better Than Revenge.mp3',
-    'Taylor Swift Songs/Speak Now TV/11 Innocent.mp3',
-    'Taylor Swift Songs/Speak Now TV/12 Haunted.mp3',
-    'Taylor Swift Songs/Speak Now TV/13 Last Kiss.mp3',
-    'Taylor Swift Songs/Speak Now TV/14 Long Live.mp3',
-    'Taylor Swift Songs/Speak Now TV/15 Ours.mp3',
-    'Taylor Swift Songs/Speak Now TV/16 Superman.mp3',
-    'Taylor Swift Songs/Speak Now TV/17 Electric Touch.mp3',
-    'Taylor Swift Songs/Speak Now TV/18 When Emma Falls In Love.mp3',
-    'Taylor Swift Songs/Speak Now TV/19 I Can See You.mp3',
-    'Taylor Swift Songs/Speak Now TV/20 Castles Crumbling.mp3',
-    'Taylor Swift Songs/Speak Now TV/21 Foolish One.mp3',
-    'Taylor Swift Songs/Speak Now TV/22 Timeless.mp3',
+  const very_sigma_music = [
+    'Music/BABY LAUGH JERSEY FUNK - VHM4D.mp3',
+    'Music/Catch Me If You Can - KSI.mp3',
+    'Music/Cupid Gay Version - edd2e.mp3',
+    'Music/Doja (Remix) - Central D & Lil Nas X.mp3',
+    'Music/Jelly House - Rizzler.mp3',
+    'Music/Last Night (Gay Remix) - Morgan Wallen.mp3',
+    'Music/Lumi Athena - ICEWHORE!.mp3',
+    'Music/OH NO NO NO FUNK - DJ KVNXD.mp3',
+    'Music/Skibidi Toilet Theme Song.mp3',
+    'Music/Sticking Out Your Gyatt For The Rizzler.mp3',
+    'Music/Thick Of It - KSI.mp3',
+    'Music/TV Off (Gay Remix) - Dasgasdom3.mp3',
   ]
 
   //Picks a random song from the array.
-  let random_song = taylorSwiftSongs[Math.floor(Math.random()*taylorSwiftSongs.length)];
+  let random_song = very_sigma_music[Math.floor(Math.random()*very_sigma_music.length)];
 
   //Creates an audio element.
-  let swiftie = document.createElement("audio");
-  swiftie.classList.add('swiftie');
-  swiftie.setAttribute('src', `${random_song}`);
-  swiftie.setAttribute('autoplay', true);
-  swiftie.setAttribute('loop', true);
-  document.body.appendChild(swiftie);
-  console.log(swiftie);
+  let skibidi = document.createElement("audio");
+  skibidi.classList.add('skibidi');
+  skibidi.setAttribute('src', `${random_song}`);
+  skibidi.setAttribute('autoplay', true);
+  skibidi.setAttribute('loop', true);
+  document.body.appendChild(skibidi);
+  console.log(skibidi);
 }
 
 function action2() {
