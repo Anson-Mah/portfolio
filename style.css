@@ -1,13 +1,112 @@
-nav {
-	background-color: rgba(256, 256, 256, 0.9); /* Makes navbar semi-transparent */
+:root {
+  --nav-color: hsl(30, 30%, 40%);
+	--nav-color-darker: hsl(30, 30%, 30%);
+  --button-color: hsl(0, 55%, 60%);
+  --button-color-darker: hsl(0, 45%, 53%);
+  --name-color: hsl(0, 55%, 60%);
 }
 
-#navbarNav {
-	width: auto; /* Removes unncessary space from offcanvas navbar */
+/* Provides a smooth scrolling animation when user clicks on navigation buttons */
+html {
+	scroll-behavior: smooth;
 }
+
+/* Sets font and removes body margin */
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	margin: 0;
+	background-color: white;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* ================
+NAVIGATION BAR 
+================ */
+
+nav {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	background-color: var(--nav-color);
+	z-index: 2;
+}
+
+#logo {
+	float: left;
+	margin: 3.5px;
+	padding: 3.5px;
+	height: 5ch;
+}
+
+/* ================
+DEFAULT NAVBAR
+================ */
+
+.nav_menu a {
+	float: right;
+	color: white;
+	padding: 1rem 1rem;
+	text-decoration: none; /* Removes underline when not hovered on */
+  transition: background-color 0.3s; /* Adds color transition on user hover */
+	height: 25px;
+}
+
+/* Darkens a navigation button on hover */
+.nav_menu a:hover {
+	background-color: var(--nav-color-darker); 
+	text-decoration: underline;
+}
+
+/* ================
+SMALL NAVBAR (HAMBURGER BUTTON)
+================ */
+
+#nav_small_container {
+	display: none; /* Hamburger Button is hidden by default. Media Queries are used to show it when necessary. */
+}
+
+#hamburger_button {
+	float: right; /* Places hamburger button on the right side of the navbar */
+	background-color: var(--nav-color);
+	border: none; /* Removes a weird black border */
+	cursor: pointer; /* Signals to the user that the hamburger button is clickable */
+	z-index: 1;
+}
+
+/* Places mini navigation menu close to the hamburger button, but not touching it */
+#nav_small {
+	display: none; /* Hides hamburger navigation menu on page load. Javascript is used to show the navigation menu on hamburger button click. */
+	background-color: var(--nav-color);
+	position: absolute;
+	top: 8ch;
+	right: 1ch;
+	z-index: 1;
+
+}
+
+/* Determines when the standard navigation bar turns into a hamburger button */
+@media (max-width: 700px) {
+
+	#nav_default {
+		display: none;
+		width: 0;
+	}
+
+	#nav_small_container {
+		display: block;
+	}
+
+}
+
+/* ================
+HERO SECTION
+================ */
 
 #wavy_name {
-	user-select: none; /* Makes "ANSON MAH" text unselectable */
+	user-select: none; /* Makes the "ANSON MAH" text unselectable */
 }
 
 #wavy_name span {
@@ -17,8 +116,20 @@ nav {
 	animation-delay: calc(-0.2s*var(--i)); /* A delay is set on each individual letter, forming the wavy effect */
 }
 
+header {
+	height: 90vh;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 header p {
 	font-size: 3.5vw; /* Sizes the "Welcome to my portfolio!" text */
+}
+
+#N {
+	margin-right: 1ch; /* Provides a space between first and last name */
 }
 
 /* Animation for wavy text */
@@ -40,42 +151,207 @@ header p {
 	}
 }
 
-header {
-	height: 85vh; /* Makes the hero section take up the full screen when user visits the page */
-}
+/* ================
+GENERAL SECTIONS
+================ */
 
 section {
-	padding-top: 5em; /* Ensures that when you click on a navbar link, no parts of the section go behind the navbar*/
+	padding: 2em;
+	padding-top: 3em;
 }
 
-/* #skills img {
-  width: 300px;
-  height: 300px;
-	aspect-ratio: 1 / 1;
-} */
-
-textarea {
-	height: 10em;
+h1 {
+	text-align: center;
 }
 
-#submit_button {
+.skibidi {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ================
+ABOUT ME
+================ */
+
+#about_me_skibidi {
+	gap: 10vw;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0; /* Removes default padding */
+	padding-left: 1ch;
+}
+
+li {
+	margin-bottom: 1ch;
+	font-size: 2ch;
+}
+
+#id_picture {
+	border: 5px solid var(--name-color);
+}
+
+/* ================
+EDUCATION
+================ */
+
+#education_skibidi {
+	gap: 5vw;
+
+	img {
+		width: 150px;
+	}
+
+	h3 {
+		text-decoration: underline;
+	}
+}
+
+/* ================
+PROJECTS
+================ */
+
+#grid_of_projects {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto auto;
+	justify-content: center;
+	align-items: center;
+}
+
+#projects img {
+	width: 350px;
+}
+
+.project_button {
+	background-color: var(--button-color);
+	color: white;
+	padding: 1em;
+	transition: background-color 0.3s; /* Adds color transition on user hover */
+	text-decoration: none;
+}
+
+/* Changes the button style when hovered */
+.project_button:hover {
+	background-color: var(--button-color-darker);
+}
+
+.info {
+	width: 350px;
+}
+
+.info_right {
+	margin: 1em;
+}
+
+.info_left {
+	text-align: right;
+	h2, p, a {
+		margin: 1em;
+	}
+}
+
+/* ================
+CARTOGRAPHY
+================ */
+
+#cartography_skibidi {
+	flex-direction: column;
+	gap: 2em;
+}
+
+#cartography img {
+	height: 500px;
+	border: 2px solid black;
+}
+
+/* ================
+SKILLS
+================ */
+
+#skills img {
+	height: 125px;
+}
+
+#skills_grid {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-template-rows: auto auto;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+}
+
+.logo_text {
+	margin: 0;
+	text-align: center;
+}
+
+/* ================
+CONTACT
+================ */
+
+#contact {
+	text-align: center;
+}
+
+#contact p {
+	font-size: 2ch;
+	font-weight: 600;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.25em;
+	text-align: left;
+}
+
+input, textarea {
+	display: block;
+	padding: 0.375em 0.75em;
 	width: 100%;
+	font-size: 1em;
+	line-height: 1.5;
+	border: 1px solid lightgray;
+	border-radius: 0.375em;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	margin-bottom: 1em;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.social_media_icons {
-	color: hsl(0, 0%, 50%); /* Logos are grey by default */
-	transition: color 0.2s; /* Allows for smooth hover transition */
-
-	/* Moves logos up by 0.5ch */
-	position: relative;
-	bottom: 0.5ch;
+input:focus, textarea:focus {
+	border-color: #86b7fe;
+	outline: 0;
+	box-shadow: 0 0 0 0.25em rgba(13, 110, 253, 0.25);
 }
 
-.social_media_icons:hover {
-	color: hsl(0, 0%, 0%); /* Icon will turn black when hovered */
+#contact button {
+	background-color: var(--button-color);
+	color: white;
+	padding: 1em;
+	transition: background-color 0.3s; /* Adds color transition on user hover */
+	font-size: 1.75ch;
+	border-radius: 0.75em;
+	border: 0;
+	width: 103%;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.map {
-	border: 6px solid black;
-	border-radius: 10px;
+/* Changes the button style when hovered */
+#contact button:hover {
+	background-color: var(--button-color-darker);
+	cursor: pointer;
+}
+
+/* ================
+FOOTER
+================ */
+
+#footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15vw;
 }

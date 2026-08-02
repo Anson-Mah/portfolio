@@ -1,59 +1,63 @@
-<!--Anson Mah-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Anson Mah - Portfolio</title>
-	<link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
-	<!--Bootstrap CSS--> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-	<!--Bootstrap Icons--> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anson Mah - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 </head>
 
 <body>
 
 	<!--NAVBAR-->
-	<nav class="navbar navbar-expand-sm p-3 sticky-top">
+  <nav>
+    <!--Name / Logo-->
+    <a class="logo" href="#top">
+      <img src="images/signature_white.png" id="logo" alt="Logo">
+    </a>
 
-		<!--Name / Logo-->
-		<a href="#top" class="navbar-brand">A.M.</a>
+    <!--Default Navigation Menu-->
+    <div id="nav_default" class="nav_menu">
+			<a href="#contact" class="nav-link">Contact</a>
+			<a href="#skills" class="nav-link">Skills</a>
+			<a href="#cartography" class="nav-link">Cartography</a>
+			<a href="#projects" class="nav-link">Projects</a>
+			<a href="#education" class="nav-link">Education</a>
+			<a href="#about_me" class="nav-link">About Me</a>
+    </div>
 
-		<!--Hamburger Button-->
-		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+    <!--Hamburger Button for small screens sizes-->
+    <div id="nav_small_container">
+      <button id="hamburger_button" onclick="toggle_hamburger_button()">
+        <svg viewBox="0 0 24 24" height="48" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" x2="20" y1="7" y2="7"/>
+          <line x1="3" x2="20" y1="13" y2="13"/>
+          <line x1="3" x2="20" y1="19" y2="19"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
 
-		<!--Offcanvas-->
-		<div class="offcanvas offcanvas-end" id="navbarNav">
-			<div class="offcanvas-header">
-				<h5 class="offcanvas-title me-3">A.M.</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-			</div>
+  <!--The navigation menu that appears when you click on the hamburger button-->
+  <div id="nav_small" class="nav_menu">
+    <a href="#about_me" class="nav-link">About Me</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#cartography" class="nav-link">Cartography</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
 
-			<!--Nav Links-->
-			<div class="offcanvas-body justify-content-end">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a href="#about_me" class="nav-link">ABOUT ME</a></li>
-					<li class="nav-item"><a href="#education" class="nav-link">EDUCATION</a></li>
-					<li class="nav-item"><a href="#projects" class="nav-link">PROJECTS</a></li>
-					<li class="nav-item"><a href="#maps" class="nav-link">MAPS</a></li>
-					<li class="nav-item"><a href="#skills" class="nav-link">SKILLS</a></li>
-					<li class="nav-item"><a href="#contact" class="nav-link">CONTACT</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<!--HERO SECTION-->
-	<header class="container text-center d-flex flex-column justify-content-center mb-5">
+  <!--HERO SECTION-->
+	<header>
 		<div id="wavy_name">
 			<span style="--i:1">A</span>
 			<span style="--i:2">N</span>
 			<span style="--i:3">S</span>
 			<span style="--i:4">O</span>
-			<span style="--i:5" class="me-4">N</span>
+			<span style="--i:5" id="N">N</span>
 
 			<span style="--i:6">M</span>
 			<span style="--i:7">A</span>
@@ -62,176 +66,159 @@
 		<p>Welcome to my portfolio!</p>
 	</header>
 
-	<!--ABOUT ME-->
-	<section class="container" id="about_me">
-		<h3 class="text-center text-secondary my-4">ABOUT ME</h3>
-		<h6 class="text-center text-secondary my-4">Who is Anson Mah?</h6>
-		<div class="row">
+  <!--ABOUT ME-->
+  <section id="about_me">
+    <h1>About Me</h1>
+    <div class="skibidi" id="about_me_skibidi">
+      <div>
+        <h1>Hello, I am <span style="color: var(--name-color);">Anson Mah</span>.</h1>
+        
+        <ul>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--name-color)" class="bi bi-geo-alt" viewBox="0 0 16 16">
+              <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            </svg>
+            New Jersey, USA
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--name-color)" class="bi bi-person" viewBox="0 0 16 16">
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+            </svg>
+            17 Years Old
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--name-color)" class="bi bi-window-stack" viewBox="0 0 16 16">
+              <path d="M4.5 6a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1M6 6a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+              <path d="M12 1a2 2 0 0 1 2 2 2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zM2 12V5a2 2 0 0 1 2-2h9a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1m1-4v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8zm12-1V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v2z"/>
+            </svg>
+            Computer Science Student
+          </li>
+        </ul>
+      </div>
 
-			<!--Picture of the Developer-->
-			<div class="col-6">
-				<img src="images/id_picture.png" class="img-thumbnail float-end" alt="Picture of Anson Mah">
-			</div>
-	
-			<!--Developer's Name + Essential Facts about the Developer-->
-			<div class="col-6 align-self-center">
-				<h2 class="mb-3">Hello, I am <span class="text-primary">Anson Mah</span></h2>
-				
-				<div class="p-1">
-					<i class="text-primary bi bi-geo-alt"></i>
-					<span>New Jersey, USA</span>
-				</div>
-	
-				<div class="p-1">
-					<i class="text-primary bi bi-person"></i>
-					<span>17 Years Old</span>
-				</div>
-	
-				<div class="p-1">
-					<i class="text-primary bi bi-window-stack"></i>
-					<span>Computer Science Student</span>
-				</div>
-			</div>
-		</div>
-	</section>
+      <div>
+        <img id="id_picture" src="images/id_picture.png" alt="Image of Anson Mah">
+      </div>
+    </div>
+  </section>
 
-	<!--EDUCATION-->
-	<section class="container" id="education">
-		<h3 class="text-center text-secondary my-4">EDUCATION</h3>
-		<h6 class="text-center text-secondary">Where I am attending High School</h6>
+  <!--EDUCATION-->
+  <section id="education">
+    <h1>Education</h1>
 
-		<div class="d-flex justify-content-center align-items-center">
-			<div class="col-3 p-0">
-				<img src="images/logos/acit.png" class="img-fluid" id="acit_logo" alt="Logo of the Atlantic County Institute of Technology">
-			</div>
+    <div class="skibidi" id="education_skibidi">
+      <img id="acit_logo" src="images/logos/acit.png" alt="Logo of the Atlantic County Institute of Technology">
 
-			<div class="col-6 align-self-center p-4">
-				<h3>Atlantic County Institute of Technology</h3>
-				<div class="p-1"><span>Vocational High School</span></div>
-				<div class="p-1"><span>Class of 2027</span></div>
-				<div class="p-1"><span>Current Weighted GPA: 4.188</span></div>
-			</div>
-		</div>
-	</section>
+      <div>
+        <h3>Atlantic County Institute of Technology</h3>
 
-	<!--WORKS-->
-	<section class="container" id="projects">
-		<h3 class="text-center text-secondary my-4">PROJECTS</h3>
-		<h6 class="text-center text-secondary my-4">Computer Science Projects</h6>
+        <ul>
+          <li>Duration: 2023 - 2027</li>
+          <li>Unweighted GPA: 3.885</li>
+          <li>Weighted GPA: 4.188</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-		<!--Brick Breaker-->
-		<div class="row">
-			<div class="col-6 align-self-center text-end p-4">
-				<h2 class="mb-3">Brick Breaker</h2>
-				<p>A clone of Atari Breakout.</p>
-				<a class="btn btn-primary mb-2" href="projects/brick_breaker/index.html" target="_blank">View Project</a>
-				<!-- <a class="btn btn-primary mb-2" href="https://github.com/Anson-Mah-ACITECH/brick-breaker" target="_blank">View Repository</a> -->
-			</div>
+  <!--PROJECTS-->
+  <section id="projects">
+    <h1>Projects</h1>
 
-			<div class="col-6 p-0">
-				<img src="images/project_previews/brick_breaker.png" class="img-fluid" alt="Screenshot of Brick Breaker Project">
-			</div>
-		</div>
+    <div id="grid_of_projects">
+      <img src="images/project_previews/brick_breaker.png" alt="Screenshot of Brick Breaker Project">
 
-		<!--Quiz Project-->
-		<div class="row">
-			<div class="col-6 p-0">
-				<img src="images/project_previews/quiz_app.png" class="img-fluid" alt="Screenshot of Quiz App">
-			</div>
+      <div class="info info_right">
+        <h2>Brick Breaker</h2>
+        <p>A clone of Atari Breakout</p><br>
+        <a class="project_button" href="projects/brick_breaker/index.html" target="_blank">View Project</a>
+        <!-- <a class="project_button" href="https://github.com/Anson-Mah-ACITECH/brick-breaker" target="_blank">View Repository</a> -->
+      </div>
+      
+      <div class="info info_left">
+        <h2>Quiz App</h2>
+        <p>Choose to take one of  four available quizzes!</p><br>
+        <a class="project_button" href="projects/quiz_app/index.html" target="_blank">View Project</a>
+        <!-- <a class="project_button" href="https://github.com/Anson-Mah-ACITECH/brick-breaker" target="_blank">View Repository</a> -->
+      </div>
 
-			<div class="col-6 align-self-center p-4">
-				<h2 class="mb-3">Quiz App</h2>
-				<p>Choose to take one of our four available quizzes!</p>
-				<a class="btn btn-primary mb-2" href="projects/quiz_app/index.html" target="_blank">View Project</a>
-				<!-- <a class="btn btn-primary mb-2" href="https://github.com/Atlantic-County-Institute-of-Technology/quiz-app-Anson-Mah-ACITECH" target="_blank">View Repository</a> -->
-			</div>
-		</div>
+      <img src="images/project_previews/quiz_app.png" alt="Screenshot of Quizzes Project">
+      
+      <img src="images/project_previews/oceanic_currency_converter.png" alt="Screenshot of Oceanic Currency Converter">
+  
+      <div class="info info_right">
+        <h2>Oceanic Currency Converter</h2>
+        <p>A useful tool to convert any currency used in Oceania.</p><br>
+        <a class="project_button" href="projects/currency_converter/index.html" target="_blank">View Project</a>
+        <!-- <a class="project_button" href="https://github.com/Anson-Mah-ACITECH/brick-breaker" target="_blank">View Repository</a> -->
+      </div>
+    </div>
+  </section>
 
-		<!--Oceanic Currency Converter-->
-		<div class="row">
-			<div class="col-6 align-self-center text-end p-4">
-				<h2 class="mb-3">Oceanic Currency Converter</h2>
-				<p>A useful tool to convert any currency used in Oceania.</p>
-				<a class="btn btn-primary mb-2" href="projects/currency_converter/index.html" target="_blank">View Project</a>
-				<!-- <a class="btn btn-primary mb-2" href="https://github.com/Atlantic-County-Institute-of-Technology/converter-program-Anson-Mah-ACITECH" target="_blank">View Repository</a> -->
-			</div>
+  <!--CARTOGRAPHY-->
+  <section id="cartography">
+    <h1>Cartography</h1>
+    <br>
+    <div class="skibidi" id="cartography_skibidi">
+      <img src="images/maps/greece.png" alt="Map of Greece">
+      <img src="images/maps/germanosphere.png" alt="Map of the Germanosphere">
+      <img src="images/maps/mexico.png" alt="Map of Mexico">
+      <img src="images/maps/poland.png" alt="Map of Poland">
+    </div>
+  </section>
 
-			<div class="col-6 p-0">
-				<img src="images/project_previews/oceanic_currency_converter.png" class="img-fluid" alt="Screenshot of Oceanic Currency Converter">
-			</div>
-		</div>
-	</section>
+  <!--SKILLS-->
+  <section id="skills">
+    <h1>Skills</h1>
+    <br>
+    <div id="skills_grid">
+      <div>
+        <img src="images/logos/html5.svg" alt="HTML5 Logo">
+        <p class="logo_text">HTML</p>
+      </div>
 
-	<!--MAPS-->
-	<section class="container" id="maps">
-		<h3 class="text-center text-secondary my-4">MAPS</h3>
-		<h6 class="text-center text-secondary">Maps of Various Countries</h6>
+      <div>
+        <img src="images/logos/css3.svg" alt="CSS3 Logo">
+        <p class="logo_text">CSS</p>
+      </div>
 
-		<img src="images/maps/greece.png" alt="Map of Greece" class="map img-fluid my-3">
-		<img src="images/maps/germanosphere.png" alt="Map of the germanosphere" class="map img-fluid my-3">
-		<img src="images/maps/mexico.png" alt="Map of Mexico" class="map img-fluid my-3">
-		<img src="images/maps/poland.png" alt="Map of Poland" class="map img-fluid my-3">
-	</section>
+      <div>
+        <img src="images/logos/javascript.svg" alt="Javascript Logo">
+        <p class="logo_text">Javascript</p>
+      </div>
 
-	<!--SKILLS-->
-	<section class="container" id="skills">
-		<h3 class="text-center text-secondary my-4">SKILLS</h3>
-		<h6 class="text-center text-secondary my-4">The Tools I Use</h6>
-		<div class="row">
-			<!--HTML-->
-			<div class="col-3 d-flex flex-column align-items-center justify-content-center">
-				<img src="images/logos/html5.svg" alt="HTML5 Logo" class="img-fluid">
-				<p class="text-center p-1">HTML</p>
-			</div>
+      <div>
+        <img src="images/logos/bootstrap.svg" alt="Bootstrap Logo">
+        <p class="logo_text">Bootstrap CSS</p>
+      </div>
 
-			<!--CSS-->
-			<div class="col-3 d-flex flex-column align-items-center justify-content-center">
-				<img src="images/logos/css3.svg" alt="CSS3 Logo" class="img-fluid">
-				<p class="text-center p-1">CSS</p>
-			</div>
+      <div>
+        <img src="images/logos/python.png" alt="Python Logo">
+        <p class="logo_text">Python</p>
+      </div>
 
-			<!--Javascript-->
-			<div class="col-3 d-flex flex-column align-items-center justify-content-center">
-				<img src="images/logos/javascript.svg" alt="Javascript Logo" class="img-fluid">
-				<p class="text-center p-1">Javascript</p>
-			</div>
+      <div>
+        <img src="images/logos/sql.svg" alt="Unofficial SQL Logo">
+        <p class="logo_text">SQL</p>
+      </div>
 
-			<!--Bootstrap-->
-			<div class="col-3">
-				<img src="images/logos/bootstrap.svg" alt="Bootstrap Logo" class="img-fluid">
-				<p class="text-center p-1">Bootstrap</p>
-			</div>
+      <div>
+        <img src="images/logos/paint_net.webp" alt="Paint.Net Logo">
+        <p class="logo_text">Paint.Net</p>
+      </div>
 
-			<!--Python-->
-			<div class="col-3 d-flex flex-column align-items-center justify-content-center">
-				<img src="images/logos/python.png" alt="Python Logo" class="img-fluid">
-				<p class="text-center p-1">Python</p>
-			</div>
+      <div>
+        <img src="images/logos/QGIS.svg" alt="QGIS Logo">
+        <p class="logo_text">QGIS</p>
+      </div>
+    </div>
+  </section>
 
-			<!--SQL-->
-			<div class="col-3 d-flex flex-column align-items-center justify-content-center">
-				<img src="images/logos/sql.svg" alt="SQL Logo" class="img-fluid">
-				<p class="text-center p-1">SQL</p>
-			</div>
-
-			<!--paint.net-->
-			<div class="col-3 d-flex flex-column align-items-center justify-content-center">
-				<img src="images/logos/paint_net.webp" alt="Paint.NET Logo" class="img-fluid">
-				<p class="text-center p-1">Paint.NET</p>
-			</div>
-
-			<!--QGIS-->
-			<div class="col-3 d-flex flex-column align-items-center justify-content-center">
-				<img src="images/logos/QGIS.svg" alt="QGIS Logo" class="img-fluid">
-				<p class="text-center p-1">QGIS</p>
-			</div>
-		</div>
-	</section>
-
-	<!--CONTACT-->
-	<section class="container" id="contact">
-		<h3 class="text-center text-secondary my-3">CONTACT</h3>
-		<h6 class="text-center text-secondary my-2">Feel Free to Contact Me!</h6>
+  <!--CONTACT-->
+  <section id="contact">
+    <h1>Contact</h1>
+    <p>Feel Free to Contact Me!</p>
 
 		<!-- Web3Forms is used to send the user's message to the developer's email inbox-->
 		<form action="https://api.web3forms.com/submit" method="POST">
@@ -240,55 +227,28 @@
 			<input type="hidden" name="access_key" value="a38adee7-e16c-41ea-ae38-021cf5c2a8b1">
 
 			<!--Name-->
-			<div class="mb-3">
-				<label for="name" class="form-label">Name</label>
-				<input name="name" type="text" class="form-control" id="name" required placeholder="Anson Mah">
+			<div>
+				<label for="name">Name</label>
+				<input name="name" type="text" id="name" required placeholder="Anson Mah">
 			</div>
 
 			<!--Email-->
-			<div class="mb-3">
-				<label for="email" class="form-label">Email</label>
-				<input name="email" type="text" class="form-control" id="email" required placeholder="ansonmah212@gmail.com">
+			<div>
+				<label for="email">Email</label>
+				<input name="email" type="text" id="email" required placeholder="ansonmah212@gmail.com">
 			</div>
 
 			<!--Message-->
-			<div class="mb-3">
-				<label for="message" class="form-label">Message</label>
-				<textarea name="message" class="form-control" id="message" required placeholder="Leave website feedback, let me know about career opportunities, or just say hello!" style="height: 10em;"></textarea>
+			<div>
+				<label for="message">Message</label>
+				<textarea name="message" id="message" required placeholder="Leave website feedback, let me know about career opportunities, or just say hello!" style="height: 10em;"></textarea>
 			</div>
 
 			<!--Submit Button-->
-			<button class="btn btn-primary" type="submit" id="submit_button">Submit</button>
+			<button type="submit" id="submit_button">Submit</button>
 		</form>
-	</section>
+  </section>
 
-	<hr>
-
-	<!--FOOTER-->
-	<section class="container" id="footer">
-		<div class="row text-center">
-
-			<!--Social Media Icons-->
-			<div class="col-12 col-md-4 mb-5">
-				<a class="fs-1 social_media_icons me-3" href="https://github.com/Anson-Mah" target="_blank"><i class="bi bi-github"></i></a>
-				<a class="fs-1 social_media_icons" href="https://www.linkedin.com/in/anson-mah" target="_blank"><i class="bi bi-linkedin"></i></a>
-			</div>
-			
-			<!--Copyright Stuff-->
-			<div class="col-12 col-md-4 mb-5">
-				<p>© 2026 Anson Mah. All rights reserved.</p>
-			</div>
-
-			<!--"Go to Top" Button-->
-			<div class="col-12 col-md-4 mb-5">
-				<a href="#top" class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.25rem, 0);">
-					Go to Top
-					<i class="bi bi-arrow-up mb-1"></i>
-				</a>
-			</div>
-		</div>
-	</section>
-	
-	<!--Bootstrap Javascript--> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>
