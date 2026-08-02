@@ -88,7 +88,7 @@ SMALL NAVBAR (HAMBURGER BUTTON)
 }
 
 /* Determines when the standard navigation bar turns into a hamburger button */
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 	#nav_default {
 		display: none;
 		width: 0;
@@ -350,15 +350,4 @@ input:focus, textarea:focus {
 		margin-right: auto;
 		width: 1000px;
 	}
-}
-
-/* ================
-FOOTER
-================ */
-
-#footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 15vw;
 }

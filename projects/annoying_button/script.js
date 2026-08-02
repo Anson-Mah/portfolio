@@ -1,6 +1,3 @@
-// Date: 22 February, 2024
-// Name: Anson Mah
-
 let click_counter = 0
 console.log(click_counter);
 
@@ -27,6 +24,11 @@ function action1() {
     document.getElementById("button_a").style.top='';
     document.getElementById("button_a").style.left='';
     document.getElementById("text_above").innerHTML = "Doing that is way too exhausting for me...";
+    // Mutes all the Music
+    let audio_files=document.querySelectorAll("audio");
+    audio_files.forEach(audio_files => {
+      audio_files.muted=true;
+    });
   } else if (click_counter==86 || click_counter==87) {
     document.getElementById("text_above").innerHTML = "";
     // Temprarily disables the button so it has time to hover around the screen. 
@@ -43,11 +45,6 @@ function action1() {
     console.log(y);
     console.log(x);
     document.getElementById("text_above").innerHTML = "";
-    // Mutes the Taylor Swift songs
-    let audio_files=document.querySelectorAll("audio");
-    audio_files.forEach(audio_files => {
-      audio_files.muted=true;
-    });
   } else if (click_counter>74) {
     document.getElementById("text_above").innerHTML = "";
   } else if (click_counter>64) {
